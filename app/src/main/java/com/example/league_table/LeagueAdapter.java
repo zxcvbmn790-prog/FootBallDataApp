@@ -3,7 +3,7 @@ package com.example.league_table;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,26 +22,28 @@ import java.util.List;
 public class LeagueAdapter extends RecyclerView.Adapter<LeagueAdapter.ViewHolder> {
     private Context context;
     private List<LeagueItem> list;
+    private String currentLeagueCode = "";
 
     public LeagueAdapter(Context context, List<LeagueItem> list) {
         this.context = context;
         this.list = list;
     }
 
+    public void setCurrentLeagueCode(String leagueCode) {
+        this.currentLeagueCode = (leagueCode != null) ? leagueCode : "";
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // XML 파일 이름은 실제 사용하는 이름으로 맞춰주세요. (예: item_league.xml)
         View view = LayoutInflater.from(context).inflate(R.layout.item_league_row, parent, false);
         return new ViewHolder(view);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         LeagueItem item = list.get(position);
 
-        // --- 데이터 설정 ---
         holder.tvPosition.setText(String.valueOf(item.getPosition()));
         holder.tvName.setText(item.getName());
         holder.tvPlayed.setText(String.valueOf(item.getPlayed()));
@@ -56,67 +57,82 @@ public class LeagueAdapter extends RecyclerView.Adapter<LeagueAdapter.ViewHolder
 
         Glide.with(context).load(item.getCrestUrl()).into(holder.imgCrest);
 
-        // --- ✨ 자연스럽게 사라지는 그라데이션 적용 로직 ✨ ---
-        int teamPosition = item.getPosition();
+        // --- 그라데이션 적용 로직 ---
+        applyGradientBackground(holder, item);
 
+        // --- 최근 5경기(Form) 표시 로직 ---
+        displayRecentForm(holder, item);
+    }
+
+    private void applyGradientBackground(ViewHolder holder, LeagueItem item) {
+        int teamPosition = item.getPosition();
         Drawable background = ContextCompat.getDrawable(context, R.drawable.item_background_template).mutate();
         GradientDrawable gradientDrawable = (GradientDrawable) background;
-
         int solidColor = ContextCompat.getColor(context, R.color.white);
         int startColor = solidColor;
         int endColor = solidColor;
         boolean applyGradient = true;
-        if (MainActivity.League_rank.equals("FL1")) {
-            if (teamPosition >= 1 && teamPosition <= 3) {
-                startColor = ContextCompat.getColor(context, R.color.blue_start); // 연한 파랑
-                endColor = ContextCompat.getColor(context, R.color.blue_end);     // 진한 파랑
-            } else if (teamPosition == 4) {
-                startColor = ContextCompat.getColor(context, R.color.orange_start);
-                endColor = ContextCompat.getColor(context, R.color.orange_end);
-            } else if (teamPosition == 5) {
-                startColor = ContextCompat.getColor(context, R.color.green_start);
-                endColor = ContextCompat.getColor(context, R.color.green_end);
-            } else if (teamPosition >= 18 && teamPosition <= 20) {
-                startColor = ContextCompat.getColor(context, R.color.red_start);
-                endColor = ContextCompat.getColor(context, R.color.red_end);
-            } else {
-                applyGradient = false;
-            }
-        } else {
 
-            if (teamPosition >= 1 && teamPosition <= 4) {
-                startColor = ContextCompat.getColor(context, R.color.blue_start); // 연한 파랑
-                endColor = ContextCompat.getColor(context, R.color.blue_end);     // 진한 파랑
-            } else if (teamPosition == 5) {
-                startColor = ContextCompat.getColor(context, R.color.orange_start);
-                endColor = ContextCompat.getColor(context, R.color.orange_end);
-            } else if (teamPosition == 6) {
-                startColor = ContextCompat.getColor(context, R.color.green_start);
-                endColor = ContextCompat.getColor(context, R.color.green_end);
-            } else if (teamPosition >= 18 && teamPosition <= 20) {
-                startColor = ContextCompat.getColor(context, R.color.red_start);
-                endColor = ContextCompat.getColor(context, R.color.red_end);
-            } else {
-                applyGradient = false;
-            }
+        int blueRankMax, orangeRank, greenRank, relegationRankMin;
+
+        if ("FL1".equals(currentLeagueCode)) {
+            blueRankMax = 3; orangeRank = 4; greenRank = 5; relegationRankMin = 17;
+        } else {
+            blueRankMax = 4; orangeRank = 5; greenRank = 6; relegationRankMin = 18;
+        }
+
+        if (teamPosition <= blueRankMax) {
+            startColor = ContextCompat.getColor(context, R.color.blue_start);
+            endColor = ContextCompat.getColor(context, R.color.blue_end);
+        } else if (teamPosition == orangeRank) {
+            startColor = ContextCompat.getColor(context, R.color.orange_start);
+            endColor = ContextCompat.getColor(context, R.color.orange_end);
+        } else if (teamPosition == greenRank) {
+            startColor = ContextCompat.getColor(context, R.color.green_start);
+            endColor = ContextCompat.getColor(context, R.color.green_end);
+        } else if (teamPosition >= relegationRankMin) {
+            startColor = ContextCompat.getColor(context, R.color.red_start);
+            endColor = ContextCompat.getColor(context, R.color.red_end);
+        } else {
+            applyGradient = false;
         }
 
         if (applyGradient) {
-            // ▼▼▼ 수정된 부분 ▼▼▼
-            // 색상: [진한색, 연한색, 흰색]
-            // 위치: [ 0%  ,  30%  , 70% ] -> 70% 지점에서 완전히 흰색이 됨
-            int[] colors = {endColor, startColor, solidColor};
-            float[] positions = {0.0f, 0.15f, 0.3f};
-            // ▲▲▲ 수정 끝 ▲▲▲
-
+            int[] colors = { endColor, startColor, solidColor };
+            float[] positions = { 0.0f, 0.3f, 0.7f };
             gradientDrawable.setColors(colors, positions);
             gradientDrawable.setOrientation(GradientDrawable.Orientation.LEFT_RIGHT);
-
         } else {
             gradientDrawable.setColor(solidColor);
         }
-
         holder.itemView.setBackground(gradientDrawable);
+    }
+
+    private void displayRecentForm(ViewHolder holder, LeagueItem item) {
+        holder.formContainer.removeAllViews();
+        String form = item.getForm();
+        if (form != null && !form.isEmpty()) {
+            String[] results = form.split(",");
+            for (String result : results) {
+                TextView formView = new TextView(context);
+                formView.setText(result.trim());
+                formView.setTextColor(ContextCompat.getColor(context, R.color.white));
+                formView.setTextSize(10f);
+                formView.setGravity(Gravity.CENTER);
+
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        dpToPx(18), dpToPx(18));
+                params.setMarginEnd(dpToPx(4));
+                formView.setLayoutParams(params);
+
+                int backgroundResId;
+                holder.formContainer.addView(formView);
+            }
+        }
+    }
+
+    private int dpToPx(int dp) {
+        return (int) (dp * context.getResources().getDisplayMetrics().density);
     }
 
     @Override

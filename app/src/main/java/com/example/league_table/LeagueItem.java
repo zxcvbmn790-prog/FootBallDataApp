@@ -5,7 +5,7 @@ public class LeagueItem {
     private String name;
     private String crestUrl;
     private int played, won, draw, lost, goalsFor, goalsAgainst, goalDiff, points;
-    private String form; // 'form' 데이터를 저장할 필드 추가
+    private String form;
 
     public LeagueItem(int position, String name, String crestUrl,
                       int played, int won, int draw, int lost,
@@ -22,7 +22,7 @@ public class LeagueItem {
         this.goalsAgainst = goalsAgainst;
         this.goalDiff = goalDiff;
         this.points = points;
-        this.form = form; // 생성자에서 form 데이터 저장
+        this.form = form;
     }
 
     // Getters
@@ -37,5 +37,5 @@ public class LeagueItem {
     public int getGoalsAgainst() { return goalsAgainst; }
     public int getGoalDiff() { return goalDiff; }
     public int getPoints() { return points; }
-    public String getForm() { return form; } // form 데이터를 가져올 getter 추가
+    public String getForm() { return form; }
 }

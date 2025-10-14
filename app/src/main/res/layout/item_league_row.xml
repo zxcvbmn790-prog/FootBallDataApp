@@ -5,18 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="2dp"
-    android:layout_marginEnd="4dp"
+    android:layout_marginEnd="2dp"
     android:layout_marginBottom="6dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="2dp">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="6dp"
-        android:gravity="center_vertical">
-
-    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -43,7 +35,7 @@
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1.2"
+            android:layout_weight="1"
             android:text="리버풀"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -60,8 +52,10 @@
         <LinearLayout
             android:id="@+id/formContainer"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical|end"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 
