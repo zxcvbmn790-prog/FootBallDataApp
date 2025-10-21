@@ -1,6 +1,7 @@
 package com.example.league_table;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
@@ -62,6 +63,21 @@ public class LeagueAdapter extends RecyclerView.Adapter<LeagueAdapter.ViewHolder
 
         // --- 최근 5경기(Form) 표시 로직 ---
         displayRecentForm(holder, item);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 1. 새로운 Activity로 이동하기 위한 Intent 생성
+                Intent intent = new Intent(context, TeamDetailActivity.class);
+
+                // 2. 클릭된 팀의 정보를 Intent에 담아서 전달
+                intent.putExtra("TEAM_NAME", item.getName());
+                intent.putExtra("CREST_URL", item.getCrestUrl());
+
+                // 3. 새로운 Activity 시작
+                context.startActivity(intent);
+            }
+        });
     }
 
     private void applyGradientBackground(ViewHolder holder, LeagueItem item) {
@@ -76,8 +92,11 @@ public class LeagueAdapter extends RecyclerView.Adapter<LeagueAdapter.ViewHolder
         int blueRankMax, orangeRank, greenRank, relegationRankMin;
 
         if ("FL1".equals(currentLeagueCode)) {
-            blueRankMax = 3; orangeRank = 4; greenRank = 5; relegationRankMin = 17;
-        } else {
+            blueRankMax = 3; orangeRank = 4; greenRank = 5; relegationRankMin = 16;
+        }if ("BL1".equals(currentLeagueCode)){
+            blueRankMax = 4; orangeRank = 5; greenRank = 6; relegationRankMin = 16;
+        }
+        else {
             blueRankMax = 4; orangeRank = 5; greenRank = 6; relegationRankMin = 18;
         }
 
@@ -126,6 +145,15 @@ public class LeagueAdapter extends RecyclerView.Adapter<LeagueAdapter.ViewHolder
                 formView.setLayoutParams(params);
 
                 int backgroundResId;
+                switch (result.trim()) {
+                    case "W": backgroundResId = R.drawable.form_win_background; break;
+//                    case "D": backgroundResId = R.drawable.form_draw_background; break;
+//                    case "L": backgroundResId = R.drawable.form_lose_background; break;
+                    default: backgroundResId = 0; break;
+                }
+                if (backgroundResId != 0) {
+                    formView.setBackgroundResource(backgroundResId);
+                }
                 holder.formContainer.addView(formView);
             }
         }
