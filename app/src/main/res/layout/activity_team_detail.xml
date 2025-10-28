@@ -1,27 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="24dp"
+    android:background="#F5F5F5"
     tools:context=".TeamDetailActivity">
 
-    <ImageView
-        android:id="@+id/imgDetailCrest"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="48dp"
-        tools:src="@drawable/pl"/>
-
-    <TextView
-        android:id="@+id/tvDetailName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        tools:text="Arsenal"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp"
+            android:background="@color/white"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/imgDetailCrest"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:src="@drawable/pl"/>
+
+            <TextView
+                android:id="@+id/tvDetailName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                tools:text="팀 이름"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주요 정보"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="16dp">
+
+                <TextView android:text="감독" android:layout_gravity="fill_horizontal" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvCoach" tools:text="-" android:layout_gravity="end"/>
+
+                <TextView android:text="구장" android:layout_marginTop="12dp" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvVenue" tools:text="-" android:layout_marginTop="12dp" android:layout_gravity="end"/>
+
+                <TextView android:text="창단" android:layout_marginTop="12dp" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvFounded" tools:text="-" android:layout_marginTop="12dp" android:layout_gravity="end"/>
+
+                <TextView android:text="팀 색상" android:layout_marginTop="12dp" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvColors" tools:text="-" android:layout_marginTop="12dp" android:layout_gravity="end"/>
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선수단"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:layout_marginTop="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="등번호"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:text="포지션"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="이름"
+                android:textStyle="bold"
+                android:gravity="start"
+                android:paddingStart="8dp"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/squadRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:background="@color/white"
+            tools:listitem="@layout/item_player"
+            tools:itemCount="5"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

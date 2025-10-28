@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +45,8 @@ public class LeagueAdapter extends RecyclerView.Adapter<LeagueAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         LeagueItem item = list.get(position);
-
+        LeagueItem currentItemForBinding = list.get(position);
+        Log.d("LeagueAdapterBind", "Binding position " + position + ", Team ID: " + currentItemForBinding.getTeamId());
         holder.tvPosition.setText(String.valueOf(item.getPosition()));
         holder.tvName.setText(item.getName());
         holder.tvPlayed.setText(String.valueOf(item.getPlayed()));
@@ -64,19 +66,12 @@ public class LeagueAdapter extends RecyclerView.Adapter<LeagueAdapter.ViewHolder
         // --- 최근 5경기(Form) 표시 로직 ---
         displayRecentForm(holder, item);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 1. 새로운 Activity로 이동하기 위한 Intent 생성
-                Intent intent = new Intent(context, TeamDetailActivity.class);
-
-                // 2. 클릭된 팀의 정보를 Intent에 담아서 전달
-                intent.putExtra("TEAM_NAME", item.getName());
-                intent.putExtra("CREST_URL", item.getCrestUrl());
-
-                // 3. 새로운 Activity 시작
-                context.startActivity(intent);
-            }
+        holder.imgCrest.setOnClickListener(v -> {
+            int idToSend = item.getTeamId();
+            Log.d("LeagueAdapterClick", "클릭된 아이템의 Team ID: " + idToSend);
+            Intent intent = new Intent(context, TeamDetailActivity.class);
+            intent.putExtra("TEAM_ID", item.getTeamId()); // 팀 ID 전달
+            context.startActivity(intent);
         });
     }
 

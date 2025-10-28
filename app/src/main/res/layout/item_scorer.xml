@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="4dp">
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="순위"
+            android:gravity="center"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="선수"
+            android:paddingStart="8dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="팀"
+            android:gravity="center"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="득점"
+            android:gravity="center"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="4dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="1" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="엘링 홀란드" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="맨체스터 시티" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="12" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="2" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="모하메드 살라" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="리버풀" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="10" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="3" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="손흥민" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="토트넘 홋스퍼" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="9" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="4" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="콜 팔머" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="첼시" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="5" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="알렉산더 이사크" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="뉴캐슬 유나이티드" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="올리 왓킨스" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="아스톤 빌라" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="도미닉 솔란케" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="본머스" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="6dp"
+        android:gravity="center_vertical">
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="재러드 보언" android:paddingStart="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="웨스트햄 유나이티드" android:gravity="center" android:textSize="12sp"/>
+        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="도움 순위"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="4dp">
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="순위"
+                android:gravity="center"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="선수"
+                android:paddingStart="8dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="팀"
+                android:gravity="center"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="도움"
+                android:gravity="center"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="4dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="1" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="올리 왓킨스" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="아스톤 빌라" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="10" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="2" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="키어런 트리피어" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="뉴캐슬" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="9" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="3" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="모하메드 살라" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="리버풀" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="4" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="페드로 네투" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="울버햄튼" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="5" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="파스칼 그로스" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="브라이튼" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="앤서니 고든" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="뉴캐슬" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="제임스 워드-프라우스" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="웨스트햄" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="부카요 사카" android:paddingStart="8dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="아스날" android:gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
+        </LinearLayout>
+
+</LinearLayout>

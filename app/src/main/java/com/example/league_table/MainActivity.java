@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (!response.isSuccessful() || response.body() == null) {
+
                     runOnUiThread(() -> {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(MainActivity.this, "API 오류", Toast.LENGTH_SHORT).show();
@@ -122,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 String json = response.body().string();
+                android.util.Log.d("API_RAW_DATA", "받은 JSON: " + json);
                 parseLeague(json);
             }
         });
@@ -131,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             JSONObject root = new JSONObject(json);
             JSONArray standings = root.getJSONArray("standings");
+
             if (standings.length() == 0) {
                 runOnUiThread(() -> {
                     progressBar.setVisibility(View.GONE);
@@ -138,26 +141,28 @@ public class MainActivity extends AppCompatActivity {
                 });
                 return;
             }
-
             JSONObject first = standings.getJSONObject(0);
             JSONArray table = first.getJSONArray("table");
 
             for (int i = 0; i < table.length(); i++) {
                 JSONObject t = table.getJSONObject(i);
                 JSONObject team = t.getJSONObject("team");
+                int currentTeamId = team.getInt("id");
+                Log.d("ParseLeague", "파싱된 Team ID: " + currentTeamId + ", Team Name: " + team.getString("tla"));
                 teamList.add(new LeagueItem(
                         t.getInt("position"),
                         team.getString("tla"),
                         team.getString("crest"),
-                        t.getInt("playedGames"), // API key: playedGames
+                        t.getInt("playedGames"),
                         t.getInt("won"),
                         t.getInt("draw"),
                         t.getInt("lost"),
                         t.getInt("goalsFor"),
                         t.getInt("goalsAgainst"),
-                        t.getInt("goalDifference"), // API key: goalDifference
+                        t.getInt("goalDifference"),
                         t.getInt("points"),
-                        t.optString("form", null)
+                        t.optString("form", ""),
+                        currentTeamId // 추출한 ID 사용
                 ));
             }
 
@@ -169,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e("ParseLeague", "JSON 파싱 오류: " + e.getMessage());
             runOnUiThread(() -> progressBar.setVisibility(View.GONE));
         }
     }

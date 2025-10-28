@@ -1,6 +1,7 @@
 package com.example.league_table;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,20 @@ public class FixtureAdapter extends RecyclerView.Adapter<FixtureAdapter.FixtureV
 
         Glide.with(context).load(item.getHomeTeamCrest()).into(holder.imgHomeCrest);
         Glide.with(context).load(item.getAwayTeamCrest()).into(holder.imgAwayCrest);
+
+        holder.imgHomeCrest.setOnClickListener(v -> {
+            Intent intent = new Intent(context, TeamDetailActivity.class);
+            intent.putExtra("TEAM_NAME", item.getHomeTeamName());
+            intent.putExtra("CREST_URL", item.getHomeTeamCrest());
+            context.startActivity(intent);
+        });
+
+        holder.imgAwayCrest.setOnClickListener(v -> {
+            Intent intent = new Intent(context, TeamDetailActivity.class);
+            intent.putExtra("TEAM_NAME", item.getAwayTeamName());
+            intent.putExtra("CREST_URL", item.getAwayTeamCrest());
+            context.startActivity(intent);
+        });
     }
 
     @Override
