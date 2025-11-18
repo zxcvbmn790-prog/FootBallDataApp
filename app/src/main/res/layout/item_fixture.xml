@@ -2,28 +2,30 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12dp">
-
-        <TextView
-            android:id="@+id/tvMatchDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="10.18 (토) 23:00"
-            android:textSize="12sp"
-            android:layout_marginBottom="8dp"/>
+        android:padding="10dp"
+        android:background="@android:color/white"> <TextView
+        android:id="@+id/tvMatchDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="10.18 (토) 23:00"
+        android:textSize="12sp"
+        android:layout_marginBottom="6dp"
+        android:textColor="?attr/colorOnSurfaceVariant"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,42 +33,137 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/tvHomeTeam"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Arsenal"
-                android:gravity="end"
-                android:textStyle="bold"/>
-
-            <ImageView
-                android:id="@+id/imgHomeCrest"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="8dp"/>
+                android:orientation="horizontal"
+                android:gravity="end|center_vertical">
+                <TextView
+                    android:id="@+id/tvHomeTeam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="ARS"
+                    android:gravity="end"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:maxWidth="80dp"
+                    android:textColor="?attr/colorOnSurface"/>
+                <ImageView
+                    android:id="@+id/imgHomeCrest"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="4dp"
+                    android:contentDescription="Home Team Crest"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="vs"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:textColor="?attr/colorOutline"/>
 
-            <ImageView
-                android:id="@+id/imgAwayCrest"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="8dp"/>
-
-            <TextView
-                android:id="@+id/tvAwayTeam"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Liverpool"
-                android:gravity="start"
-                android:textStyle="bold"/>
+                android:orientation="horizontal"
+                android:gravity="start|center_vertical">
+                <ImageView
+                    android:id="@+id/imgAwayCrest"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="Away Team Crest"/>
+                <TextView
+                    android:id="@+id/tvAwayTeam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="LIV"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:maxWidth="80dp"
+                    android:textColor="?attr/colorOnSurface"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutVoteArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/layoutVoteButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVoteHome"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="90dp"
+                    android:layout_height="36dp"
+                    tools:text="ARS 승"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="3dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVoteAway"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="90dp"
+                    android:layout_height="36dp"
+                    tools:text="LIV 승"
+                    android:textSize="10sp"
+                    android:layout_marginStart="3dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutVoteResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:paddingHorizontal="4dp"
+                android:visibility="gone"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvHomeVoteResult"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="0표 (0%)"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"/>
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="6dp"/>
+
+                <TextView
+                    android:id="@+id/tvAwayVoteResult"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    tools:text="0표 (0%)"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"/>
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

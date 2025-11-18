@@ -1,310 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp"
-    android:background="@color/white">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:layout_marginBottom="4dp">
-        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:layout_marginBottom="4dp">
-
-        <TextView
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:text="순위"
-            android:gravity="center"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="선수"
-            android:paddingStart="8dp"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.5"
-            android:text="팀"
-            android:gravity="center"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:text="득점"
-            android:gravity="center"
-            android:textStyle="bold"/>
-    </LinearLayout>
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="4dp"/>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="1" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="엘링 홀란드" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="맨체스터 시티" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="12" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="2" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="모하메드 살라" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="리버풀" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="10" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="3" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="손흥민" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="토트넘 홋스퍼" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="9" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="4" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="콜 팔머" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="첼시" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="5" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="알렉산더 이사크" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="뉴캐슬 유나이티드" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="올리 왓킨스" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="아스톤 빌라" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="도미닉 솔란케" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="본머스" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="6dp"
-        android:gravity="center_vertical">
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="재러드 보언" android:paddingStart="8dp"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="웨스트햄 유나이티드" android:gravity="center" android:textSize="12sp"/>
-        <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/white">
+        android:paddingBottom="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="도움 순위"
+            android:text="득점 순위 (TOP 5)"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp"/>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp"
-            android:layout_marginBottom="4dp">
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp"
-            android:layout_marginBottom="4dp">
-
-            <TextView
-                android:layout_width="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="순위"
-                android:gravity="center"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="0dp"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_s1" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="1" />
+                <ImageView android:id="@+id/imgTeamCrest_s1" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_s1" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/MCI" />
+                <TextView android:id="@+id/tvPlayerName_s1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_s1" app:layout_constraintEnd_toStartOf="@+id/tvGoals_s1" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_s1" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="엘링 홀란드" />
+                <TextView android:id="@+id/tvTeamName_s1" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_s1" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_s1" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_s1" android:text="맨체스터 시티" />
+                <TextView android:id="@+id/tvGoals_s1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="13골" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="선수"
-                android:paddingStart="8dp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="0dp"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_s2" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="2" />
+                <ImageView android:id="@+id/imgTeamCrest_s2" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_s2" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/BRI" />
+                <TextView android:id="@+id/tvPlayerName_s2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_s2" app:layout_constraintEnd_toStartOf="@+id/tvGoals_s2" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_s2" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="대니 웰백" />
+                <TextView android:id="@+id/tvTeamName_s2" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_s2" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_s2" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_s2" android:text="브라이턴" />
+                <TextView android:id="@+id/tvGoals_s2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="6골" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:text="팀"
-                android:gravity="center"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="40dp"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_s3" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="2" />
+                <ImageView android:id="@+id/imgTeamCrest_s3" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_s3" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/BON" />
+                <TextView android:id="@+id/tvPlayerName_s3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_s3" app:layout_constraintEnd_toStartOf="@+id/tvGoals_s3" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_s3" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="앙투안 세메뇨" />
+                <TextView android:id="@+id/tvTeamName_s3" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_s3" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_s3" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_s3" android:text="본머스" />
+                <TextView android:id="@+id/tvGoals_s3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="6골" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="도움"
-                android:gravity="center"
-                android:textStyle="bold"/>
-        </LinearLayout>
-        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="4dp"/>
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_s4" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="2" />
+                <ImageView android:id="@+id/imgTeamCrest_s4" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_s4" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/BRE" />
+                <TextView android:id="@+id/tvPlayerName_s4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_s4" app:layout_constraintEnd_toStartOf="@+id/tvGoals_s4" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_s4" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="이고르 티아고" />
+                <TextView android:id="@+id/tvTeamName_s4" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_s4" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_s4" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_s4" android:text="브렌트퍼드" />
+                <TextView android:id="@+id/tvGoals_s4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="6골" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="1" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="올리 왓킨스" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="아스톤 빌라" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="10" android:gravity="center"/>
-        </LinearLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_s5" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="2" />
+                <ImageView android:id="@+id/imgTeamCrest_s5" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_s5" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/CRI" />
+                <TextView android:id="@+id/tvPlayerName_s5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_s5" app:layout_constraintEnd_toStartOf="@+id/tvGoals_s5" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_s5" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="장-필리프 마테타" />
+                <TextView android:id="@+id/tvTeamName_s5" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_s5" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_s5" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_s5" android:text="크리스탈 펠리스" />
+                <TextView android:id="@+id/tvGoals_s5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="6골" />
 
-        <LinearLayout
+                <TextView
+                    android:id="@+id/tvTeamName_a2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="뉴캐슬"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="118dp"
+                    tools:layout_editor_absoluteY="23dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="도움 순위 (TOP 5)"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="2" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="키어런 트리피어" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="뉴캐슬" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="9" android:gravity="center"/>
-        </LinearLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_a1" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="1" />
+                <ImageView android:id="@+id/imgTeamCrest_a1" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_a1" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/TOT" />
+                <TextView android:id="@+id/tvPlayerName_a1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_a1" app:layout_constraintEnd_toStartOf="@+id/tvAssists_a1" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_a1" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="모하메드 쿠두스" />
+                <TextView android:id="@+id/tvTeamName_a1" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_a1" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_a1" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_a1" android:text="토트넘 핫스퍼" />
+                <TextView android:id="@+id/tvAssists_a1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="4도움" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="3" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="모하메드 살라" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="리버풀" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
-        </LinearLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_a1" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="1" />
+                <ImageView android:id="@+id/imgTeamCrest_a1" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_a1" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/EVE" />
+                <TextView android:id="@+id/tvPlayerName_a1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_a1" app:layout_constraintEnd_toStartOf="@+id/tvAssists_a1" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_a1" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="잭 그릴리시" />
+                <TextView android:id="@+id/tvTeamName_a1" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_a1" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_a1" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_a1" android:text="에버튼" />
+                <TextView android:id="@+id/tvAssists_a1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="4도움" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="4" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="페드로 네투" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="울버햄튼" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
-        </LinearLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_a3" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="2" />
+                <ImageView android:id="@+id/imgTeamCrest_a3" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_a3" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/BRN" />
+                <TextView android:id="@+id/tvPlayerName_a3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_a3" app:layout_constraintEnd_toStartOf="@+id/tvAssists_a3" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_a3" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="퀼린치 하트만" />
+                <TextView android:id="@+id/tvTeamName_a3" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_a3" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_a3" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_a3" android:text="번리" />
+                <TextView android:id="@+id/tvAssists_a3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="4도움" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="5" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="파스칼 그로스" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="브라이튼" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
-        </LinearLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_a4" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="1" />
+                <ImageView android:id="@+id/imgTeamCrest_a4" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_a4" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/SUN" />
+                <TextView android:id="@+id/tvPlayerName_a4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_a4" app:layout_constraintEnd_toStartOf="@+id/tvAssists_a4" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_a4" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="그라니트 자카" />
+                <TextView android:id="@+id/tvTeamName_a4" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_a4" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_a4" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_a4" android:text="선덜랜드" />
+                <TextView android:id="@+id/tvAssists_a4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="4도움" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="앤서니 고든" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="뉴캐슬" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
-        </LinearLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView android:id="@+id/tvRank_a5" android:layout_width="30dp" android:layout_height="wrap_content" android:gravity="center" android:textSize="14sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="2" />
+                <ImageView android:id="@+id/imgTeamCrest_a5" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/tvRank_a5" app:layout_constraintTop_toTopOf="parent" tools:src="@drawable/CRI" />
+                <TextView android:id="@+id/tvPlayerName_a5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:textSize="16sp" android:textStyle="bold" android:textColor="@android:color/black" app:layout_constraintBottom_toTopOf="@+id/tvTeamName_a5" app:layout_constraintEnd_toStartOf="@+id/tvAssists_a5" app:layout_constraintStart_toEndOf="@+id/imgTeamCrest_a5" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed" android:text="다니엘 무뇨스" />
+                <TextView android:id="@+id/tvTeamName_a5" android:layout_width="0dp" android:layout_height="wrap_content" android:textSize="14sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/tvPlayerName_a5" app:layout_constraintStart_toStartOf="@+id/tvPlayerName_a5" app:layout_constraintTop_toBottomOf="@+id/tvPlayerName_a5" android:text="크리스탈 펠리스" />
+                <TextView android:id="@+id/tvAssists_a5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" android:text="3도움" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="7" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="제임스 워드-프라우스" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="웨스트햄" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="6dp"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="8" android:gravity="center"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="부카요 사카" android:paddingStart="8dp"/>
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.5" android:text="아스날" android:gravity="center" android:textSize="12sp"/>
-            <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="6" android:gravity="center"/>
-        </LinearLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -211,7 +211,10 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject homeTeam = match.getJSONObject("homeTeam");
                 JSONObject awayTeam = match.getJSONObject("awayTeam");
 
+                int matchId = match.getInt("id"); // TODO: 매치 ID 파싱
+
                 fixtureList.add(new FixtureItem(
+                        matchId, // 파싱된 ID 전달
                         homeTeam.getString("tla"),
                         homeTeam.getString("crest"),
                         awayTeam.getString("tla"),

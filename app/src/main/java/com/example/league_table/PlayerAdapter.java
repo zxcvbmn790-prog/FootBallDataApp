@@ -31,12 +31,10 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
         PlayerItem item = playerList.get(position);
 
         holder.tvPlayerName.setText(item.getName());
-        if (item.getJerseyNumber() > 0) {
-            holder.tvPlayerJerseyNumber.setText(String.valueOf(item.getJerseyNumber()));
-        } else {
-            holder.tvPlayerJerseyNumber.setText("-");
-        }
         holder.tvPlayerPosition.setText(translatePosition(item.getPosition()));
+
+        // ▼▼▼ '등번호' 대신 '국적' 설정 ▼▼▼
+        holder.tvPlayerNationality.setText(item.getNationality());
     }
 
     @Override
@@ -44,9 +42,17 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
         return playerList.size();
     }
 
+    // 포지션 번역 헬퍼 메서드
     private String translatePosition(String position) {
         if (position == null) return "N/A";
         switch (position) {
+            case "Right-Back": return "수비수";
+            case "Left-Back": return "수비수";
+            case "Centre-Back": return "수비수";
+            case "Right-Mid": return "미드필더";
+            case "Left-Mid": return "미드필더";
+            case "Centre-Mid": return "미드필더";
+            case "Right-Winger": return "공격수";
             case "Goalkeeper": return "골키퍼";
             case "Defence": case "Defender": return "수비수";
             case "Midfield": case "Midfielder": return "미드필더";
@@ -56,10 +62,13 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
     }
 
     public static class PlayerViewHolder extends RecyclerView.ViewHolder {
-        TextView tvPlayerJerseyNumber, tvPlayerPosition, tvPlayerName;
+        // ▼▼▼ ViewHolder 변수 수정 ▼▼▼
+        TextView tvPlayerNationality, tvPlayerPosition, tvPlayerName;
+
         public PlayerViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvPlayerJerseyNumber = itemView.findViewById(R.id.tvPlayerJerseyNumber);
+            // 'tvPlayerJerseyNumber' 대신 'tvPlayerNationality' ID로 수정
+            tvPlayerNationality = itemView.findViewById(R.id.tvPlayerNationality);
             tvPlayerPosition = itemView.findViewById(R.id.tvPlayerPosition);
             tvPlayerName = itemView.findViewById(R.id.tvPlayerName);
         }

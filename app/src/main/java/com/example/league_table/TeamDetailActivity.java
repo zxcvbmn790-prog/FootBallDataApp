@@ -27,7 +27,7 @@ import okhttp3.Response;
 
 public class TeamDetailActivity extends AppCompatActivity {
 
-    private static final String API_KEY = "98344f614f34453ba57993405115956d"; // 실제 키 사용 권장
+    private static final String API_KEY = "98344f614f34453ba57993405115956d";
     private static final String BASE_URL = "https://api.football-data.org/v4/teams/";
 
     private ImageView imgDetailCrest;
@@ -121,11 +121,13 @@ public class TeamDetailActivity extends AppCompatActivity {
                     String position = player.optString("position", "N/A");
                     if ("Coach".equals(position)) continue;
 
+                    // ▼▼▼ 'shirtNumber' 대신 'nationality' 파싱 ▼▼▼
                     playerList.add(new PlayerItem(
                             player.optString("name", "N/A"),
                             position,
-                            player.optInt("shirtNumber", 0)
+                            player.optString("nationality", "N/A") // "nationality" 키로 수정
                     ));
+                    // ▲▲▲ 수정 끝 ▲▲▲
                 }
             } else {
                 Log.w("TeamDetailActivity", "선수단(squad) 정보 없음");

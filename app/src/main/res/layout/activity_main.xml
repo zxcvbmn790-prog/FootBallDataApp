@@ -7,13 +7,41 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5">
 
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButtonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center"
+        app:singleSelection="true"
+        app:checkedButton="@+id/btnStandings">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStandings"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="리그 순위"
+            android:textSize="14sp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlayerStats"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="득점 / 도움"
+            android:textSize="14sp"
+            android:layout_marginStart="-1dp"/>
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:overScrollMode="never"
         android:scrollbars="none"
         android:paddingHorizontal="8dp"
-        android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:clipToPadding="false">
 
@@ -81,76 +109,113 @@
             android:paddingBottom="16dp">
 
             <LinearLayout
+                android:id="@+id/layoutStandingsAndFixtures"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="12dp"
-                android:paddingBottom="8dp"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                android:gravity="center_vertical">
-                <TextView android:layout_width="30dp" android:text="순위" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <View android:layout_width="36dp" android:layout_height="0dp"/>
-                <TextView android:layout_width="0dp" android:layout_weight="1" android:text="팀" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="30dp" android:text="경기" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="30dp" android:text="승" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="30dp" android:text="무" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="30dp" android:text="패" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="30dp" android:text="득" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="30dp" android:text="실" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="30dp" android:text="득실" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="40dp" android:text="승점" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="0dp" android:layout_weight="0.8" android:text="최근" android:gravity="center" android:textStyle="bold" android:layout_marginStart="8dp" android:layout_height="wrap_content"/>
-            </LinearLayout>
+                android:orientation="vertical"
+                android:visibility="visible">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp"> <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:paddingStart="4dp"
-                android:paddingEnd="4dp"
-                android:paddingBottom="8dp"/>
-                <ProgressBar
-                    android:id="@+id/progressBar"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="8dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:gravity="center_vertical">
+                    <TextView android:layout_width="30dp" android:text="순위" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <View android:layout_width="36dp" android:layout_height="0dp"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:text="팀" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="30dp" android:text="경기" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="30dp" android:text="승" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="30dp" android:text="무" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="30dp" android:text="패" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="30dp" android:text="득" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="30dp" android:text="실" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="30dp" android:text="득실" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="40dp" android:text="승점" android:gravity="center" android:textStyle="bold" android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="0.8" android:text="최근" android:gravity="center" android:textStyle="bold" android:layout_marginStart="8dp" android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:paddingBottom="8dp"/>
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:visibility="gone" />
-            </FrameLayout>
+                    android:text="주요 경기 일정"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="주요 경기 일정"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="8dp"/>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="8dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/fixturesRecyclerView"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/fixturesRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutStats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"/>
+                android:orientation="vertical"
+                android:visibility="gone">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="득점 순위"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="득점 순위"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/scorersRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/scorersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="도움 순위"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="8dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/assistsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>
